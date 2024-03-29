@@ -48,7 +48,6 @@ It shows the distance of a random variable from its mean. It is calcualted as
 ![image](https://user-images.githubusercontent.com/103921593/229993174-5b67e57e-3e01-4ac4-9f83-410a932b22bf.png)
 
 # Program :
-*/
 ```
 import numpy as np
 from scipy.stats import poisson, expon
@@ -88,12 +87,9 @@ print(f"Estimated Mean: {mean}")
 print(f"Estimated Variance: {variance}")
 ```
 ```
-
-
-
-
 # Output : 
-![Screenshot 2024-03-29 194214](https://github.com/Shubhavi17/Mean-and-Variance/assets/150005085/c7a15373-7bb2-432a-874a-4d906b560bed)
+![Screenshot 2024-03-29 194214](https://github.com/Shubhavi17/Mean-and-Variance/assets/150005085/fe2998d3-273c-410c-9d5c-191526f39b94)
+
 
 
 # Results :
