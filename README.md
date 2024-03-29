@@ -48,10 +48,49 @@ It shows the distance of a random variable from its mean. It is calcualted as
 ![image](https://user-images.githubusercontent.com/103921593/229993174-5b67e57e-3e01-4ac4-9f83-410a932b22bf.png)
 
 # Program :
+import numpy as np
+from scipy.stats import poisson, expon
+
+def estimate_poisson_mean(arrival_times):
+    # Estimate lambda (average rate) from the data
+    lam = len(arrival_times) / max(arrival_times)
+    return lam
+
+def estimate_exponential_mean(arrival_times):
+    # Estimate lambda (average rate) from the data
+    lam = 1 / np.mean(np.diff(arrival_times))
+    return lam
+
+def calculate_mean_variance(arrival_times, distribution):
+    if distribution == 'poisson':
+        lam = estimate_poisson_mean(arrival_times)
+        mean = lam
+        variance = lam
+    elif distribution == 'exponential':
+        lam = estimate_exponential_mean(arrival_times)
+        mean = 1 / lam
+        variance = 1 / (lam ** 2)
+    else:
+        raise ValueError("Invalid distribution type. Choose 'poisson' or 'exponential'.")
+
+    return mean, variance
+
+# Example arrival times (replace this with your actual data)
+arrival_times = [1, 2, 4, 6, 8, 10]
+
+# Choose the distribution type ('poisson' or 'exponential')
+distribution_type = 'exponential'
+
+mean, variance = calculate_mean_variance(arrival_times, distribution_type)
+print(f"Estimated Mean: {mean}")
+print(f"Estimated Variance: {variance}")
+
 
 
 
 # Output : 
+![Screenshot 2024-03-29 194214](https://github.com/Shubhavi17/Mean-and-Variance/assets/150005085/c7a15373-7bb2-432a-874a-4d906b560bed)
+
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
