@@ -87,10 +87,9 @@ print(f"Estimated Mean: {mean}")
 print(f"Estimated Variance: {variance}")
 ```
 ```
-# Output : 
-![Screenshot 2024-03-29 194214](https://github.com/Shubhavi17/Mean-and-Variance/assets/150005085/fe2998d3-273c-410c-9d5c-191526f39b94)
+# Output :
 
-
+![Screenshot 2024-03-29 194214](https://github.com/Shubhavi17/Mean-and-Variance/assets/150005085/d5052cf6-ad7e-4905-a8b1-8b79fa3e2efb)
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
