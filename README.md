@@ -50,46 +50,32 @@ It shows the distance of a random variable from its mean. It is calcualted as
 # Program :
 ```
 import numpy as np
-from scipy.stats import poisson, expon
-
-def estimate_poisson_mean(arrival_times):
-    # Estimate lambda (average rate) from the data
-    lam = len(arrival_times) / max(arrival_times)
-    return lam
-
-def estimate_exponential_mean(arrival_times):
-    # Estimate lambda (average rate) from the data
-    lam = 1 / np.mean(np.diff(arrival_times))
-    return lam
-
-def calculate_mean_variance(arrival_times, distribution):
-    if distribution == 'poisson':
-        lam = estimate_poisson_mean(arrival_times)
-        mean = lam
-        variance = lam
-    elif distribution == 'exponential':
-        lam = estimate_exponential_mean(arrival_times)
-        mean = 1 / lam
-        variance = 1 / (lam ** 2)
-    else:
-        raise ValueError("Invalid distribution type. Choose 'poisson' or 'exponential'.")
-
-    return mean, variance
-
-# Example arrival times (replace this with your actual data)
-arrival_times = [1, 2, 4, 6, 8, 10]
-
-# Choose the distribution type ('poisson' or 'exponential')
-distribution_type = 'exponential'
-
-mean, variance = calculate_mean_variance(arrival_times, distribution_type)
-print(f"Estimated Mean: {mean}")
-print(f"Estimated Variance: {variance}")
-```
+L=[int(i) for i in input().split()]
+N=len(L); M=max(L) 
+x=list();f=list()
+for i in range (M+1):
+    c = 0
+    for j in range(N):
+        if L[j]==i:
+            c=c+1
+    f.append(c)
+    x.append(i)
+sf=np.sum(f)
+p=list()
+for i in range(M+1):
+    p.append(f[i]/sf) 
+mean=np.inner(x,p)
+EX2=np.inner(np.square(x),p)
+var=EX2-mean**2 
+SD=np.sqrt(var)
+print("The Mean arrival rate is %.3f "%mean)
+print("The Variance of arrival from feeder is %.3f "%var) 
+print("The Standard deviation of arrival from feeder is %.3F "%SD)
 ```
 # Output :
+![Screenshot 2024-03-29 203532](https://github.com/Shubhavi17/Mean-and-Variance/assets/150005085/fda9fb64-835e-4be4-ab3c-8b71b83d1456)
 
-![Screenshot 2024-03-29 194214](https://github.com/Shubhavi17/Mean-and-Variance/assets/150005085/d5052cf6-ad7e-4905-a8b1-8b79fa3e2efb)
+
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
