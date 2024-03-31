@@ -1,4 +1,6 @@
-#  Mean and variance of a discrete  distribution
+                                                                                                        NAME : M.Shubhavi
+                                                                                                      REG.NO :212223040199
+# EX-1: Mean and variance of a discrete  distribution
 
 
 # Aim : 
